@@ -1,14 +1,24 @@
 //Inquirer (node package manager) imported
 const inquirer = require("inquirer");
 //File system module (node package manager) imported
-const writeFile = require("fs").promises;
+const { writeFile } = require("fs").promises;
 //Importing all the classes from the shapes.js file
-import { Triangle, Circle, Square } from './shapes';
+const { Triangle, Circle, Square } = require('./lib/shapes');
+//Importing the generateLogo file
+const generateLogo = require("./lib/generateLogo");
+
+//Declaring colors to use later in choices
+const red = '#FF0000';
+const blue = '#0000FF';
+const green = '#008000';
+const white = '#FFFFFF';
+const black = '#000000';
+const pink = '#ff69b4';
 
 
 //Starting inquirer.js in the terminal
 const startInquirer = async () => {
-    console.log("Have fun generating an SVG logo!");
+    console.log("Have fun generating your SVG logo!");
 
     try {
         const userInputs = await inquirer.prompt([
@@ -24,7 +34,7 @@ const startInquirer = async () => {
                 name: "shapeColor",
                 type:"list",
                 message: "Please select the color you would like your logo shape to be:",
-                choices: [hex, rgb, hsl, hwb],
+                choices: ["Red", "Blue", "Green", "White", "Black", "Pink"],
             },
             //Third question for the logo for characters
             {
@@ -46,14 +56,14 @@ const startInquirer = async () => {
                 name: "textColor",
                 type: "list",
                 message: "Please select the color you would like your text color to be:",
-                choices: [hex, rgb, hsl, hwb],
+                choices: ["Red", "Blue", "Green", "White", "Black", "Pink"],
             },
         ])
         //generate the logo using the data from above and the generateLogo.js file
-        const results = generateLogo(data);
+        const results = generateLogo(userInputs);
     
         //write the file to be in the ./dist folder
-        await writeFile('./dist/logo.svg', result);
+        await writeFile('./dist/logo.svg', results);
         
         console.log ("Your SVG logo has been created!");
     } catch (error) {
