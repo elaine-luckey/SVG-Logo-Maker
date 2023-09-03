@@ -12,11 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elaine-luckey"
+    "url": "https://github.com/elaine-luckey/SVG-Logo-Maker"
   },
   "author": "Elaine Luckey",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.6.4"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.2.10"
   }
 }
