@@ -5,12 +5,14 @@ To create a SVG Logo maker via the terminal
 To create a SVG Logo maker via the terminal that is generate using Node.js & Inquirer.
 
 ## Video Demo Link
+https://drive.google.com/file/d/1tmAhodlQC6COKHAMDoWGA9qPIn93I5OH/view
 
 
 ## Screenshots of Deployed Application
 Live Server View
 
 <img width="230" alt="image" src="https://github.com/elaine-luckey/SVG-Logo-Maker/assets/134161776/cdf2e5bb-6bf8-4ae9-9a57-d6cdba769813">
+
 
 
 Terminal Entries
